@@ -65,7 +65,3 @@ Coordinate Execute (string move){
     }    
     return coord;
 }
-
-/*int main(){
-    return 0;
-}*/

@@ -26,18 +26,27 @@ Coordinate Execute (string move){
             break;
 
             case 'M':
-            if (coord.direction % 2 == 0){
-                if (coord.direction == 0) coord.y++;
-                else coord.y--;
-            } else if (coord.direction % 2 == 1){
-                if (coord.direction == 1) coord.x++;
-                else coord.x--;
-            }            
+            if (coord.direction == 0){
+                coord.y++;
+                if (coord.y > 9) coord.y = 0;
+            } 
+            if (coord.direction == 2){
+                coord.y--;
+                if (coord.y < 0) coord.y = 9;
+            }
+            if (coord.direction == 1){
+                coord.x++;
+                if (coord.x > 9) coord.x = 0;    
+            } 
+            if (coord.direction == 3){
+                coord.x--;
+                if (coord.x < 0) coord.x = 9;
+            } 
             break;
         }
     }
-    //coord.x = floor(coord.x / 10);    
-    //coord.y = floor(coord.y / 10);
+
+    
 
     coord.direction = coord.direction % 4;
     switch (coord.direction){

@@ -10,12 +10,15 @@ int main(){
     test.y = 3;
     test.dirValue = "N";
     
-    std::cout << Execute("MMRMMLM").x;
-    std::cout << Execute("MMRMMLM").y;
-    //IS_TRUE(Execute("MMRMMLM").x == test.x, "Wrong returned x value.");
-    //IS_TRUE(Execute("MMRMMLM").y == test.y, "Wrong returned y value.");
-    //IS_TRUE(Execute("MMRMMLM").dirValue == test.dirValue, "Wrong returned direction value.");
+    TestMove("MMRMMLM", test);
+    
     return 0;
+}
+
+void TestMove (string move, Coordinate correct){
+    IS_TRUE(Execute(move).x == correct.x, "Wrong returned x value.");
+    IS_TRUE(Execute(move).y == correct.y, "Wrong returned y value.");
+    IS_TRUE(Execute(move).dirValue == correct.dirValue, "Wrong returned direction value.");
 }
 
 void IS_TRUE(bool condition, std::string exception){

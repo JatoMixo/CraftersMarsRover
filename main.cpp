@@ -14,7 +14,28 @@ Coordinate Execute (string move){
     Coordinate coord;
     for (int i = 0; i < move.length(); i++){
         char chr = move[i];
-        switch (chr){
+        if (chr == 'R'){
+            coord.direction++;
+        } else if (chr == 'L'){
+            coord.direction--;
+        } else if (chr == 'M'){
+            if (coord.direction % 2 == 0){
+                if (coord.direction % 4 == 0){
+                    coord.y++;
+                } else {
+                    coord.y--;
+                }
+            } else {
+                if ((coord.direction - 1) % 4 == 0){
+                    coord.x++;
+                } else {
+                    coord.x--;
+                }
+            }
+        } else {
+            throw std::invalid_argument("Invalid input character");
+        }
+        /*switch (chr){
             case 'R':
             if (coord.direction < 3) coord.direction++;
             else coord.direction = 0;
@@ -43,13 +64,23 @@ Coordinate Execute (string move){
                 if (coord.x < 0) coord.x = 9;
             } 
             break;
-        }
+        }*/
     }
 
     
 
     coord.direction = coord.direction % 4;
-    switch (coord.direction){
+
+    if (coord.direction == 0) {
+        coord.dirValue = "N";
+    } else if (coord.direction == 1){
+        coord.dirValue = "E";
+    } else if (coord.direction == 2){
+        coord.dirValue = "S";
+    } else if (coord.direction == 3){
+        coord.dirValue = "W";
+    }
+    /*switch (coord.direction){
         case 0:
         coord.dirValue = "N";
         break;
@@ -62,6 +93,6 @@ Coordinate Execute (string move){
         case 3:
         coord.dirValue = "W";
         break;
-    }    
+    }*/    
     return coord;
 }

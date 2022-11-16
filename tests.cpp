@@ -1,5 +1,5 @@
 #include <stdexcept>
-#include </home/jatomixo/Code/Crafters/KataSimpleMarsRover/main.cpp>
+#include <D:/Miguel/Programas/_CraftersVigo/CraftersMarsRover/main.cpp>
 
 void IS_TRUE(bool condition, std::string exception);
 void IS_FALSE(bool condition, std::string exception);

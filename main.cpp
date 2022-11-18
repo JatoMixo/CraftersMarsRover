@@ -67,9 +67,8 @@ Coordinate Execute (string move){
         }*/
     }
 
-    
-
-    coord.direction = coord.direction % 4;
+    coord.x = coord.x % 10;
+    coord.y = coord.y % 10;
 
     if (coord.direction == 0) {
         coord.dirValue = "N";

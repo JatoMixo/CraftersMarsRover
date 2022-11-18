@@ -3,14 +3,16 @@
 
 void IS_TRUE(bool condition, std::string exception);
 void IS_FALSE(bool condition, std::string exception);
+void TestMove(string move, Coordinate correct);
 
 int main(){
     Coordinate test;
-    test.x = 2;
-    test.y = 3;
+    test.x = 0;
+    test.y = 0;
     test.dirValue = "N";
     
-    TestMove("MMRMMLM", test);
+    // TestMove("MMRMMLM", test);
+    TestMove("MMMMMMMMMM", test);
     
     return 0;
 }

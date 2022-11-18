@@ -35,36 +35,6 @@ Coordinate Execute (string move){
         } else {
             throw std::invalid_argument("Invalid input character");
         }
-        /*switch (chr){
-            case 'R':
-            if (coord.direction < 3) coord.direction++;
-            else coord.direction = 0;
-            break;
-
-            case 'L':
-            if (coord.direction > 0) coord.direction--;
-            else coord.direction = 3;
-            break;
-
-            case 'M':
-            if (coord.direction == 0){
-                coord.y++;
-                if (coord.y > 9) coord.y = 0;
-            } 
-            if (coord.direction == 2){
-                coord.y--;
-                if (coord.y < 0) coord.y = 9;
-            }
-            if (coord.direction == 1){
-                coord.x++;
-                if (coord.x > 9) coord.x = 0;    
-            } 
-            if (coord.direction == 3){
-                coord.x--;
-                if (coord.x < 0) coord.x = 9;
-            } 
-            break;
-        }*/
     }
 
     coord.x = coord.x % 10;
@@ -79,19 +49,6 @@ Coordinate Execute (string move){
     } else if (coord.direction == 3){
         coord.dirValue = "W";
     }
-    /*switch (coord.direction){
-        case 0:
-        coord.dirValue = "N";
-        break;
-        case 1:
-        coord.dirValue = "E";
-        break;
-        case 2:
-        coord.dirValue = "S";
-        break;
-        case 3:
-        coord.dirValue = "W";
-        break;
-    }*/    
+        
     return coord;
 }
